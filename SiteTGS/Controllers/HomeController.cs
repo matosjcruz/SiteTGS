@@ -53,6 +53,20 @@ namespace SiteTGS.Controllers
             }
 
         }
+        [HttpPost]
+        public async Task<IActionResult> ValidaLogin([FromForm] LoginRequest request)
+        {
+            try
+            {
+
+                return Json("Enviado com sucesso");
+            }
+            catch (Exception ex)
+            {
+                return Json("Ocorreu um erro");
+            }
+
+        }
 
         public IActionResult Solucoes(int? id)
         {
