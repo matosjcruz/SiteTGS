@@ -1,0 +1,22 @@
+﻿@{
+    ViewData["Title"] = "Contato";
+}
+<main class="contato_estrutura">
+    <h1>CONTATO</h1>
+    <p>Entre em contato pelo telefone (51) 35821451 ou nos envie uma mensagem pelo formulário abaixo:</p>
+    <form>
+        <label for="nome">Nome</label>
+        <input type="text" id="contatoNome">
+
+        <label for="telefone">Telefone</label>
+        <input type="text" id="contatoTelefone">
+
+        <label for="email">Email</label>
+        <input type="email" id="contatoEmail">
+
+        <label for="mensagem">Mensagem</label>
+        <textarea type="text" id="contatoMensagem" class="contato_mensagem"></textarea>
+
+        <input type="submit" value="Enviar mensagem" id="enviarContato" class="enviar_mensagem">
+    </form>
+</main>

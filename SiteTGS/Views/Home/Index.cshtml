@@ -1,0 +1,51 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<img src="~/img/banner_pequeno.png" class="banner_pequeno">
+<main class="content">
+    <img src="~/img/banner_principal.png" class="banner">
+    <div class="modulos">
+        <img src="~/img/subtitulo_home.png" alt="ERP Matos, sistema de gestão empresarial" class="subtitulo_home">
+        <p class="descricao_erp">O sistema é ideal para empresas que buscam por uma solução acessível que atenda as suas necessidades específicas. Você pode customizar alguns dos módulos, incluindo relatórios e funcionalidades. Veja algumas de nossas soluções!</p>
+        <ul class="solucoes_lista">
+            <li class="caixa1">
+                <div>
+                    <img src="~/img/ic_nfeg.png" alt="NF-e Nota fiscal eletrônica">
+                    <h2>Nota fiscal eletrônica</h2>
+                </div>
+                <p>Emita de forma simples, operações de circulação de mercadorias. É um processo ágil e prático, pois o ERP conta com uma integração completa de clientes, produtos e pedidos.</p>
+
+                <a asp-controller="Home" asp-action="Solucoes" asp-route-id="2">Saiba mais!</a>
+            </li>
+            <li class="caixa2">
+                <div>
+                    <img src="~/img/ic_pedidog.png" alt="Orçamento e Pedido">
+                    <h2>Orçamento e Pedido</h2>
+                </div>
+                <p>Controle pedidos, ordens de serviço, orçamentos e locações. Integrado com o módulo de NF-e e NFS-e, ele possibilita a geração automática dos documentos fiscais.</p>
+
+                <a asp-controller="Home" asp-action="Solucoes" asp-route-id="5">Saiba mais!</a>
+            </li>
+            <li class="caixa3">
+                <div>
+                    <img src="~/img/ic_estoqueg.png" alt="Estoque">
+                    <h2>Estoque</h2>
+                </div>
+                <p>Gerencie produtos, vendas, compras, movimentações, inventários, possibilitando o monitoramento de materiais de maneira simples e segura. </p>
+
+                <a asp-controller="Home" asp-action="Solucoes" asp-route-id="9">SAIBA MAIS!</a>
+            </li>
+        </ul>
+        <a asp-controller="Home" asp-action="Solucoes" asp-route-id="1" class="btn_azul">Conheça todas as nossas soluções!</a>
+    </div>
+    <div class="solicite">
+        <img src="~/img/imagem_adquira.png" alt="Adquira o ERP Matos">
+        <h1>Adquira já!</h1>
+        <p>
+            E conte com diversas vantagens, como a redução de custos, eliminação do uso de interfaces manuais, redução da carga de trabalho, pois atividades repetitivas são automatizadas e melhor controle das operações da empresa. Além disso você terá
+            um suporte completo com os nossos representantes!
+        </p>
+        <a asp-controller="Home" asp-action="Contato" class="btn-linha">Solicite um orçamento</a>
+    </div>
+</main>

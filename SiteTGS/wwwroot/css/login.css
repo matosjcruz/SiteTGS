@@ -1,0 +1,70 @@
+﻿.fundo_sobre {
+    background-image: none;
+}
+
+.login_estrutura {
+    grid-area: content;
+    background: HSL (24, 9%, 82%);
+    margin: 2% 30px 12% 30px;
+    padding: 120px 30px 0px 30px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-items: center;
+}
+
+    .login_estrutura h1 {
+        grid-column: 1 / 5;
+        color: #0f2748;
+        font-size: 4rem;
+        font-weight: 800;
+        text-align: center;
+        border-left: 6px solid #0f2748;
+        border-right: 6px solid #0f2748;
+        padding: 0px 30px;
+    }
+
+
+    .login_estrutura form {
+        grid-column: 2;
+        margin-top: 40px;
+        display: flex;
+        flex-direction: column;
+        color: #5E5E5E;
+    }
+
+    .login_estrutura input {
+        height: 25px;
+        font-size: 1rem;
+        margin: 5px 0 20px 0;
+    }
+
+
+
+.botao_entrar {
+    background-color: transparent;
+    margin-top: 30px;
+    border-bottom: solid 1px #18b7e2;
+    color: #18b7e2;
+    text-transform: uppercase;
+    font-family: "Montserrat";
+    font-weight: 600;
+    letter-spacing: 1.2px;
+    font-size: 1.1em;
+    text-align: center;
+    display: grid;
+    align-items: center;
+    border-top: 0 none;
+    border-right: 0 none;
+    border-left: 0 none;
+}
+
+    .botao_entrar:hover {
+        color: #0f2748;
+        border-bottom: 1px solid #0f2748;
+    }
+
+@media (max-width: 436px) {
+    .login_estrutura form {
+        min-width: 250px;
+    }
+}

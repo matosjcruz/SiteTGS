@@ -1,0 +1,146 @@
+.fundo_sobre{
+    background-image: none;
+}
+
+.representantes_estrutura{
+    grid-area: content;
+    background-color: HSL (24, 9%, 82%);
+    margin: 80px 0 0 0;
+    display: flex;
+    flex-wrap: wrap;
+    
+}
+
+.conteudo_principal_rep{
+    padding: 50px 70px;
+    align-items: center;
+    
+}
+
+.titulo_sobre{
+    color: #0f2748;
+    font-size: 4rem;
+    font-weight: 800;
+    text-align: center;
+    border-left: 6px solid #0f2748;
+    border-right: 6px solid #0f2748;
+    padding: 0px 30px;
+}
+
+
+
+.texto_conteudo{
+    padding: 40px;
+    line-height: 1.5em;
+    text-align: center;
+}
+
+.representantes{
+    display: flex; 
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.representantes li{
+    margin: 10px;
+    padding: 30px;
+    min-width: 330px;
+    background: #f9f9f9;
+    box-shadow: 0 3px 6px 0 hsla(0, 0%, 0%, 0.2);
+    text-align: center;
+}
+
+
+
+.representantes img{
+    max-width: 200px;
+    margin: 0 auto 20px auto;
+}
+
+.representantes a{
+    line-height: 4rem;
+    color: #0f2748;
+    font-weight: 500;
+    text-transform: uppercase;
+    padding: 5px;
+    border-bottom: solid 1px #0f2748;
+    color: #0f2748;
+
+}
+
+.representantes a:hover{
+    color: #18b7e2;
+    border-bottom: solid 1px #18b7e2;
+}
+
+.representantes p{
+    line-height: 1.4rem;
+}
+
+.represente{
+    grid-column: 1 / 4;
+    display: grid;
+    grid-template-columns:1fr 2fr 2fr 1fr;
+    background-color: #2095B8;
+    padding: 40px 0 40px 0;
+    width: 100%;
+    
+}
+
+.titulo_botao{
+    grid-column: 2;
+}
+
+.titulo_botao h1{
+    font-size: 3rem;
+    font-weight: 800;
+    line-height: 3rem;
+    max-width: 500px;
+    margin-bottom: 20px;
+    color:#0f2748;    
+}
+
+.represente a{
+    padding:  20px 100px 10px 0px;
+    background: none;
+    border-bottom: solid 1px white;
+    color: white;
+    font-weight: 500;
+    font-size: 1.3rem;
+}
+
+.represente a:hover{
+    border-bottom: solid 1px #18b7e2;
+    color: #18b7e2;
+}
+
+.represente p{
+    grid-column: 3;
+    line-height: 1.5em;
+    color: #0f2748;
+    max-width: 555px;
+    margin-right: 40px;
+}
+
+@media (max-width: 962px){
+    .represente {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .titulo_botao{
+        text-align: center;
+    }
+    
+    .represente a{
+        text-align: center;
+        padding: 10px 30px 10px 30px;
+    }
+    .represente p{
+        border-left: 0;
+        padding: 20px;
+        margin: 20px 0 0 0;
+        text-align: center;
+    }
+}
+

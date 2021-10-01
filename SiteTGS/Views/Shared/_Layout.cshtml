@@ -1,0 +1,108 @@
+﻿<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <title>TGS SISTEMAS - Software de gestão para sua empresa</title>
+    <meta charset="utf-8">
+    <meta name="description" content="Sistema de gestão empresarial. Emita notas fiscais, orçamentos, pedidos e muito mais de maneira prática e fácil.">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Rubik:ital,wght@0,300;0,400;0,500;1,400&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="~/css/bootstrap.css">
+    <link rel="stylesheet" href="~/css/style.css">
+    <link rel="stylesheet" href="~/css/sobre.css">
+    <link rel="stylesheet" href="~/css/solucoes.css">
+    <link rel="stylesheet" href="~/css/representantes.css">
+    <link rel="stylesheet" href="~/css/suporte.css">
+    <link rel="stylesheet" href="~/css/contato.css">
+    <link rel="stylesheet" href="~/css/login.css">
+</head>
+<body>
+    <div class="estrutura">
+        <header class="header">
+            <nav class="navbar navbar-expand-sm">
+                <div class="container-fluid">
+                    <a asp-controller="Home" asp-action="Index" class="logo"><img src="~/img/logo_tgs.png" alt="TGS Sistemas"></a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample03" aria-controls="navbarsExample03" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarsExample03">
+                        <ul class="navbar-nav me-auto mb-2 mb-sm-0">
+                            <li><a asp-controller="Home" asp-action="Index" class="menu_ativo">Home</a></li>
+                            <li><a asp-controller="Home" asp-action="Sobre">Sobre</a></li>
+                            <li class="nav-item nav-item-drop dropdown">
+                                <a class="nav-link dropdown-toggle nav-item-drop" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Soluções</a>
+                                <ul class="dropdown-menu nav-item-drop" aria-labelledby="navbarDropdown">
+                                    <li><a class="dropdown-item" asp-controller="Home" asp-action="Solucoes" asp-route-id="1">ERP MATOS</a></li>
+                                    <li><hr class="dropdown-divider"></li>
+                                    <li><a class="dropdown-item" asp-controller="Home" asp-action="Solucoes" asp-route-id="2">NF-e</a></li>
+                                    <li><a class="dropdown-item" asp-controller="Home" asp-action="Solucoes" asp-route-id="3">NFS-e</a></li>
+                                    <li><a class="dropdown-item" asp-controller="Home" asp-action="Solucoes" asp-route-id="4">NFC-e</a></li>
+                                    <li><a class="dropdown-item" asp-controller="Home" asp-action="Solucoes" asp-route-id="5">Orçamento e Pedido</a></li>
+                                    <li><a class="dropdown-item" asp-controller="Home" asp-action="Solucoes" asp-route-id="6">Ordem de Serviço</a></li>
+                                    <li><a class="dropdown-item" asp-controller="Home" asp-action="Solucoes" asp-route-id="7">Pedido de Compra</a></li>
+                                    <li><a class="dropdown-item" asp-controller="Home" asp-action="Solucoes" asp-route-id="8">Financeiro</a></li>
+                                    <li><a class="dropdown-item" asp-controller="Home" asp-action="Solucoes" asp-route-id="9">Estoque</a></li>
+                                    <li><a class="dropdown-item" asp-controller="Home" asp-action="Solucoes" asp-route-id="10">Produção</a></li>
+                                    <li><a class="dropdown-item" asp-controller="Home" asp-action="Solucoes" asp-route-id="11">CT-e e MDF-e</a></li>
+                                    <li><a class="dropdown-item" asp-controller="Home" asp-action="Solucoes" asp-route-id="12">MD-e</a></li>
+                                </ul>
+                            </li>
+                            <li><a asp-controller="Home" asp-action="Representantes" asp->Representantes</a></li>
+                            <li><a asp-controller="Home" asp-action="Suporte">Suporte</a></li>
+                            <li><a asp-controller="Home" asp-action="Contato">Contato</a></li>
+                            <li><a asp-controller="Home" asp-action="Login">Login</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        @RenderBody()
+        <footer class="footer">
+            <ul class="menu_principal">
+                <li><a href="#">Sobre a TGS</a></li>
+                <li><a href="#">Orçamento</a></li>
+                <li><a href="#">Representação</a></li>
+                <li><a href="#">Suporte</a></li>
+            </ul>
+            <a href="#" class="sub_modulos">Módulos</a>
+            <ul class="menu_modulos">
+                <li><a href="#">NF-e</a></li>
+                <li><a href="#">NFS-e</a></li>
+                <li><a href="#">NFC-e</a></li>
+                <li><a href="#">CT-e</a></li>
+                <li><a href="#">MDF-e</a></li>
+                <li><a href="#">MD-e</a></li>
+                <li><a href="#">Financeiro</a></li>
+                <li><a href="#">Pedido e Orçamento</a></li>
+                <li><a href="#">Estoque</a></li>
+                <li><a href="#">Produção</a></li>
+            </ul>
+            <div class="contato_redes">
+                <h2>Fale conosco</h2>
+                <p>Mande um email para: <i>contato@tgssistemas.com</i> ou <a href="/Home/Contato">Clique aqui</a> e envie uma mensagem pelo nosso formulário!</p>
+                <a href="#" target="blank"><img src="~/img/ic_facebook.png"></a>
+            </div>
+        </footer>
+        <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+        <script src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.7.1/slick.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+        <script src="~/js/site.js" asp-append-version="true"></script>
+        <script>
+            var queryString = new Array();
+            $(function () {
+                var solucaoNumero = $('#hiddenSolucao').val();
+                if (solucaoNumero != "") {
+                    var id = solucaoNumero;
+                    $('.item_modulo').each(function () {
+                        if ($(this).data("id") == id) {
+                            $(this).click();
+                        }
+                    });
+                }
+            });
+        </script>
+
+        @RenderSection("Scripts", required: false)
+    </div>
+</body>
+</html>
