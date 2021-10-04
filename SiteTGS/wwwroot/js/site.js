@@ -1,3 +1,25 @@
+function humanFileSize(bytes, si = false, dp = 1) {
+	const thresh = si ? 1000 : 1024;
+
+	if (Math.abs(bytes) < thresh) {
+		return bytes + ' B';
+	}
+
+	const units = si
+		? ['kB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB']
+		: ['KiB', 'MiB', 'GiB', 'TiB', 'PiB', 'EiB', 'ZiB', 'YiB'];
+	let u = -1;
+	const r = 10 ** dp;
+
+	do {
+		bytes /= thresh;
+		++u;
+	} while (Math.round(Math.abs(bytes) * r) / r >= thresh && u < units.length - 1);
+
+
+	return bytes.toFixed(dp) + ' ' + units[u];
+}
+
 
 $(function () {
 
@@ -35,10 +57,12 @@ $(function () {
 			success: function (d) {
 				alert('Email enviado com sucesso!');
 			},
-			error: function (d) {
+			error: function (xhr, ajaxOptions, thrownError) {
+				if (xhr.status == 500) {
+					alert('Ocorreu um erro no envio do email');
+				}
 			}
 		});
-
 		event.preventDefault();
 	});
 	$("#btnLogin").click(function (event) {
@@ -50,15 +74,27 @@ $(function () {
 			type: "POST",
 			url: "/Home/ValidaLogin",
 			data: { Login: vLogin, Senha: vSenha },
-			success: function (d) {
-				console.log(d);
+			success: function (ret) {
+				var obj = JSON.parse(ret);
+				for (const [key, value] of Object.entries(obj)) {
+					var objArq = (key, value);
+					var textoHTML = "<tr><td>" + objArq.Nome + "</td><td>" + objArq.Tamanho
+					textoHTML += "</td><td>" + objArq.Data + "</td><td><a href='/Home/DownloadFile/" + objArq.Nome+"' class='btnDownload'><img src='/img/ic_download.png' class='botao_Download'></a></td></tr>"
+					$('#gvDownloads > tbody:last-child').append(textoHTML);
+					$('.dvDownloads').removeClass("hidden");
+					$('.formLogin').addClass("hidden");
+				}
 			},
-			error: function (d) {
-				console.log(d);
+			error: function (xhr, ajaxOptions, thrownError) {
+				if (xhr.status == 500) {
+					alert('Login e senha incorretos');
+					$("#login").focus();
+				}
 			}
 		});
-
 		event.preventDefault();
 	});
+	
 });
+
 

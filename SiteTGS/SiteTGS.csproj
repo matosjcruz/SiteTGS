@@ -7,6 +7,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="wwwroot\Arquivos\Grunflex_6185.zip" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\Arquivos\Grunflex_6185.zip" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="MailKit" Version="2.15.0" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="3.1.9" />
     <PackageReference Include="MimeKit" Version="2.15.1" />

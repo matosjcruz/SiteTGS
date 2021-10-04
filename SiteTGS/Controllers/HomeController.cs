@@ -19,6 +19,17 @@ namespace SiteTGS.Controllers
         private readonly ILogger<HomeController> _logger;
         private readonly IWebHostEnvironment _webHostEnvironment;
 
+        static String BytesToString(long byteCount)
+        {
+            string[] suf = { "B", "KB", "MB", "GB", "TB", "PB", "EB" }; //Longs run out around EB
+            if (byteCount == 0)
+                return "0" + suf[0];
+            long bytes = Math.Abs(byteCount);
+            int place = Convert.ToInt32(Math.Floor(Math.Log(bytes, 1024)));
+            double num = Math.Round(bytes / Math.Pow(1024, place), 1);
+            return (Math.Sign(byteCount) * num).ToString() + suf[place];
+        }
+
         public HomeController(ILogger<HomeController> logger, IMailService mailService, IWebHostEnvironment webHostEnvironment)
         {
             _webHostEnvironment = webHostEnvironment;
@@ -54,35 +65,71 @@ namespace SiteTGS.Controllers
             }
             catch (Exception ex)
             {
-                return Json("Ocorreu um erro");
+                return Error();
             }
 
         }
         [HttpPost]
-        public IActionResult ValidaLogin([FromForm] LoginRequest request)
+        public IActionResult ValidaLogin(LoginRequest req)
+        {
+            try
+            {
+                string login = "", senha = "";
+                if (req != null)
+                {
+                    login = req.Login == null ? "" : req.Login;
+                    senha = req.Senha == null ? "" : req.Senha;
+                }
+                login = login.ToUpper();
+                senha = senha.ToUpper();
+                if (((login == "RJSUPORTE" || login == "UNIMATOS" || login == "MATOS") && senha == "240862")
+                        ||
+                    (login == "CLIENTES" && senha == "MATOS2015"))
+                {
+                    string webRootPath = _webHostEnvironment.WebRootPath;
+                    string contentRootPath = _webHostEnvironment.ContentRootPath;
+                    string path = "";
+                    path = webRootPath + "\\Arquivos\\";
+                    DirectoryInfo directory = new DirectoryInfo(path);
+                    List<DownloadResponse> lst = new List<DownloadResponse>();
+                    foreach (var item in directory.GetFiles())
+                    {
+                        string nome = item.Name;
+                        string size = BytesToString(item.Length);
+                        string data = item.LastWriteTime.ToString("dd/MM/yyyy");
+                        lst.Add(new DownloadResponse() { Data = data, Tamanho = size, Nome = nome });
+                    }
+                    return Json(JsonConvert.SerializeObject(lst));
+                }
+                else
+                {
+                    return Error();
+                }
+                    
+            }
+            catch (Exception ex)
+            {
+                return Error();
+            }
+        }
+
+        [HttpGet("Home/DownloadFile/{FileName}")]
+        public IActionResult DownloadFile(string FileName)
         {
             try
             {
                 string webRootPath = _webHostEnvironment.WebRootPath;
                 string contentRootPath = _webHostEnvironment.ContentRootPath;
-                string path = "";
-                path = Path.Combine(webRootPath, "/Arquivos/");
-                DirectoryInfo directory = new DirectoryInfo(path);
-                List<DownloadResponse> lst = new List<DownloadResponse>();
-                foreach (var item in directory.GetFiles())
-                {
-                    string nome = item.Name;
-                    string size = item.Length.ToString();
-                    string data = item.LastWriteTime.ToShortDateString();
-                    lst.Add(new DownloadResponse() { Data = data, Tamanho = size, Nome = nome });
-                }
-                return Json(JsonConvert.SerializeObject(lst));
+                string path = webRootPath + "\\Arquivos\\" + FileName;
+
+                byte[] bytes = System.IO.File.ReadAllBytes(path);
+
+                return File(bytes, "application/octet-stream", FileName);
             }
             catch (Exception ex)
             {
-                return Json("Ocorreu um erro");
+                return NotFound();
             }
-
         }
 
         public IActionResult Solucoes(int? id)

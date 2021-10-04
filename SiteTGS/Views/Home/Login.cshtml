@@ -2,14 +2,29 @@
     ViewData["Title"] = "Login";
 }
 <main class="login_estrutura">
-    <h1>LOGIN</h1>
-    <form>
+    <h1 class="formLogin">LOGIN</h1>
+    <form class="formLogin">
         <label for="login">Usuário</label>
         <input type="text" id="login">
 
         <label for="senha">Senha</label>
-        <input type="text" id="senha">
+        <input id="senha" type="password">
 
         <input type="submit" value="Entrar" id="btnLogin" class="botao_entrar">
     </form>
+    <div class="dvDownloads hidden">
+        <h1>DOWNLOADS</h1>
+        <table class="gv" cellspacing="0" border="0" id="gvDownloads">
+            <thead>
+                <tr>
+                    <td>Arquivo</td>
+                    <td>Tamanho</td>
+                    <td>Data</td>
+                    <td>Download</td>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
 </main>
