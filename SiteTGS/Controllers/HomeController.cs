@@ -1,10 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using Newtonsoft.Json;
 using SiteTGS.Models;
 using SiteTGS.Services;
 
@@ -14,9 +17,11 @@ namespace SiteTGS.Controllers
     {
         private readonly IMailService mailService;
         private readonly ILogger<HomeController> _logger;
+        private readonly IWebHostEnvironment _webHostEnvironment;
 
-        public HomeController(ILogger<HomeController> logger, IMailService mailService)
+        public HomeController(ILogger<HomeController> logger, IMailService mailService, IWebHostEnvironment webHostEnvironment)
         {
+            _webHostEnvironment = webHostEnvironment;
             _logger = logger;
             this.mailService = mailService;
         }
@@ -54,12 +59,24 @@ namespace SiteTGS.Controllers
 
         }
         [HttpPost]
-        public async Task<IActionResult> ValidaLogin([FromForm] LoginRequest request)
+        public IActionResult ValidaLogin([FromForm] LoginRequest request)
         {
             try
             {
-
-                return Json("Enviado com sucesso");
+                string webRootPath = _webHostEnvironment.WebRootPath;
+                string contentRootPath = _webHostEnvironment.ContentRootPath;
+                string path = "";
+                path = Path.Combine(webRootPath, "/Arquivos/");
+                DirectoryInfo directory = new DirectoryInfo(path);
+                List<DownloadResponse> lst = new List<DownloadResponse>();
+                foreach (var item in directory.GetFiles())
+                {
+                    string nome = item.Name;
+                    string size = item.Length.ToString();
+                    string data = item.LastWriteTime.ToShortDateString();
+                    lst.Add(new DownloadResponse() { Data = data, Tamanho = size, Nome = nome });
+                }
+                return Json(JsonConvert.SerializeObject(lst));
             }
             catch (Exception ex)
             {

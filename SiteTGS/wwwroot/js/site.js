@@ -34,15 +34,31 @@ $(function () {
 			data: { Nome: vnome, Telefone: vtelefone, Email: vemails, Mensagem: vmensagem },
 			success: function (d) {
 				alert('Email enviado com sucesso!');
+			},
+			error: function (d) {
+			}
+		});
+
+		event.preventDefault();
+	});
+	$("#btnLogin").click(function (event) {
+		var vLogin, vSenha;
+		vLogin = $("#login").val();
+		vSenha = $("#senha").val();
+
+		$.ajax({
+			type: "POST",
+			url: "/Home/ValidaLogin",
+			data: { Login: vLogin, Senha: vSenha },
+			success: function (d) {
 				console.log(d);
 			},
 			error: function (d) {
-				alert('b');
 				console.log(d);
 			}
 		});
 
 		event.preventDefault();
-	})
+	});
 });
 
