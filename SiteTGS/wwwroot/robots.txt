@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /DownloadSuporte/
+Disallow: /Arquivos/
+Disallow: /Assinaturas/
