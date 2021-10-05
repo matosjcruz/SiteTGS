@@ -50,6 +50,10 @@
         padding-right:10px;
     }
 
+    .gv thead {
+        border-bottom: 1px solid black;
+    }
+
 .dvDownloads {
     grid-column: 2;
     display: flex;
