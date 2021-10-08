@@ -99,6 +99,7 @@ namespace SiteTGS.Controllers
                         string data = item.LastWriteTime.ToString("dd/MM/yyyy");
                         lst.Add(new DownloadResponse() { Data = data, Tamanho = size, Nome = nome });
                     }
+                    lst.Sort((x, y) => DateTime.Parse(y.Data).CompareTo(DateTime.Parse(x.Data)));
                     return Json(JsonConvert.SerializeObject(lst));
                 }
                 else
