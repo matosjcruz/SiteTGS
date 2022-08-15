@@ -4,8 +4,10 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <CopyRefAssembliesToPublishDirectory>false</CopyRefAssembliesToPublishDirectory>
     <UserSecretsId>148eff7f-f6a3-4b2c-86d5-36ff5e34a816</UserSecretsId>
+	  <EnvironmentName>Development</EnvironmentName>
   </PropertyGroup>
-
+  
+	
   <ItemGroup>
     <PackageReference Include="MailKit" Version="2.15.0" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="3.1.9" />
