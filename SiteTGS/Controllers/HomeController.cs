@@ -69,7 +69,8 @@ namespace SiteTGS.Controllers
             }
 
         }
-        [HttpPost]
+
+        [HttpGet]
         public IActionResult ValidaLogin(LoginRequest req)
         {
             try

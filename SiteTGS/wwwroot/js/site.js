@@ -65,35 +65,7 @@ $(function () {
 		});
 		event.preventDefault();
 	});
-	$("#btnLogin").click(function (event) {
-		var vLogin, vSenha;
-		vLogin = $("#login").val();
-		vSenha = $("#senha").val();
-
-		$.ajax({
-			type: "POST",
-			url: "/Home/ValidaLogin",
-			data: { Login: vLogin, Senha: vSenha },
-			success: function (ret) {
-				var obj = JSON.parse(ret);
-				for (const [key, value] of Object.entries(obj)) {
-					var objArq = (key, value);
-					var textoHTML = "<tr><td>" + objArq.Nome + "</td><td>" + objArq.Tamanho
-					textoHTML += "</td><td>" + objArq.Data + "</td><td><a href='/Home/DownloadFile/" + objArq.Nome+"' class='btnDownload'><img src='/img/ic_download.png' class='botao_Download'></a></td></tr>"
-					$('#gvDownloads > tbody:last-child').append(textoHTML);
-					$('.dvDownloads').removeClass("hidden");
-					$('.formLogin').addClass("hidden");
-				}
-			},
-			error: function (xhr, ajaxOptions, thrownError) {
-				if (xhr.status == 500) {
-					alert('Login e senha incorretos');
-					$("#login").focus();
-				}
-			}
-		});
-		event.preventDefault();
-	});
+	
 	
 });
 
