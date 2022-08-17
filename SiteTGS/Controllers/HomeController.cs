@@ -70,49 +70,38 @@ namespace SiteTGS.Controllers
 
         }
 
-        [HttpGet]
-        public IActionResult ValidaLogin(LoginRequest req)
+        [HttpPost]
+        public JsonResult ValidaLogin(LoginRequest req)
         {
-            try
+            string login = "", senha = "";
+            if (req != null)
             {
-                string login = "", senha = "";
-                if (req != null)
-                {
-                    login = req.Login == null ? "" : req.Login;
-                    senha = req.Senha == null ? "" : req.Senha;
-                }
-                login = login.ToUpper();
-                senha = senha.ToUpper();
-                if (((login == "RJSUPORTE" || login == "UNIMATOS" || login == "MATOS") && senha == "240862")
-                        ||
-                    (login == "CLIENTES" && senha == "MATOS2015"))
-                {
-                    string webRootPath = _webHostEnvironment.WebRootPath;
-                    string contentRootPath = _webHostEnvironment.ContentRootPath;
-                    string path = "";
-                    path = webRootPath + "\\Arquivos\\";
-                    DirectoryInfo directory = new DirectoryInfo(path);
-                    List<DownloadResponse> lst = new List<DownloadResponse>();
-                    foreach (var item in directory.GetFiles())
-                    {
-                        string nome = item.Name;
-                        string size = BytesToString(item.Length);
-                        string data = item.LastWriteTime.ToString("dd/MM/yyyy");
-                        lst.Add(new DownloadResponse() { Data = data, Tamanho = size, Nome = nome });
-                    }
-                    lst.Sort((x, y) => DateTime.Parse(y.Data).CompareTo(DateTime.Parse(x.Data)));
-                    return Json(JsonConvert.SerializeObject(lst));
-                }
-                else
-                {
-                    return Error();
-                }
-                    
+                login = req.Login == null ? "" : req.Login;
+                senha = req.Senha == null ? "" : req.Senha;
             }
-            catch (Exception ex)
+            List<DownloadResponse> lst = new List<DownloadResponse>();
+            login = login.ToUpper();
+            senha = senha.ToUpper();
+            if (((login == "RJSUPORTE" || login == "UNIMATOS" || login == "MATOS") && senha == "240862")
+                    ||
+                (login == "CLIENTES" && senha == "MATOS2015"))
             {
-                return Error();
+                string webRootPath = _webHostEnvironment.WebRootPath;
+                string contentRootPath = _webHostEnvironment.ContentRootPath;
+                string path = "";
+                path = webRootPath + "\\Arquivos\\";
+                DirectoryInfo directory = new DirectoryInfo(path);
+                foreach (var item in directory.GetFiles())
+                {
+                    string nome = item.Name;
+                    string size = BytesToString(item.Length);
+                    string data = item.LastWriteTime.ToString("dd/MM/yyyy");
+                    DateTime dt = item.LastWriteTime;
+                    lst.Add(new DownloadResponse() { Data = data, Tamanho = size, Nome = nome, DataDT = dt });
+                }
+                lst.Sort((x, y) => y.DataDT.CompareTo(x.DataDT));
             }
+            return Json(JsonConvert.SerializeObject(lst));
         }
 
         [HttpGet("Home/DownloadFile/{FileName}")]
