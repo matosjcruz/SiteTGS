@@ -34,7 +34,6 @@ img {
 /*Grid Geral*/
 .estrutura{
     display: grid;
-    background: ;
     background-color: HSL(200,25%, 94%); 
     grid-template-columns: 1fr 1fr;
     grid-template-areas: 
@@ -86,7 +85,7 @@ img {
 
 
 .logo{
-    max-width: 120px;
+    max-width: 130px;
     min-width: 100px;
     margin-right: 10px;
 }
@@ -117,25 +116,16 @@ img {
     flex: wrap; 
 }
 
-.header nav a:not(.dropdown-item) {
+.header nav a {
     display: block;
     padding: 5px;
-    margin: 3px 0 3px 25px;
+    margin: 10px 10px 5px 10px;
     color: #252525;
     font-size: 1em;
     transition: 0.2s;
     text-transform: uppercase;
     font-family: "Rubik";
-    font-weight: 500;
-}
-
-.header nav a.dropdown-item {
-    color: #252525;
-    font-size: 1em;
-    transition: 0.2s;
-    text-transform: uppercase;
-    font-family: "Rubik";
-    font-weight: 500;
+    font-weight: 500;    
 }
 
 .header nav a:hover{
@@ -157,21 +147,43 @@ img {
     grid-template-columns: 1fr 1fr 1fr;
 }
 
-.banner{
-    margin: 80px auto;
-    grid-column: 1 / 5;
-    width: 100%;
+#divBanner{
+    background-size: 400% 400%;
+    grid-area: banner;
+    height: 650px;
 }
 
-.banner_pequeno{
-    visibility: hidden;
-    display: none;
+.conteudo_banner{
+    text-align: center;
+    grid-area: banner;
+     background: linear-gradient(270deg, #3db0d2, #182848);
+    background-size: 400% 400%;
+    -webkit-animation: AnimationName 10s ease infinite;
+    -moz-animation: AnimationName 10s ease infinite;
+    animation: AnimationName 10s ease infinite;
 }
+
+.titulo_banner{
+    align-self: center;
+    margin: 250px 0 0 0; 
+    color: white;
+    font-size: 3rem;
+    font-weight: 700;
+    text-transform: inherit;
+}
+
+.subtitulo_banner{
+    align-self: center;
+    font-size: 1.4rem;
+    margin: 20px; 
+    color: white;
+}
+
 
 .modulos{
     grid-column: 1 / 5;
     background: #f8f8f8;
-    margin-top: -20px;
+    margin-top: -100px;
     box-shadow: 0 2px 6px 0 hsla(0, 0%, 0%, 0.2);
     padding: 20px;
 }
@@ -520,7 +532,7 @@ img {
 .menu_modulos{
     grid-column: 2;
     display: grid;
-    grid-template-columns: 100px 1fr;    
+    grid-template-columns: 150px 1fr;    
 }
 
 .menu_modulos a{
@@ -538,14 +550,18 @@ img {
     grid-row: 1 / -1;
     text-align: right;
     display: grid;
+    grid-template-columns: 300px 35px 1fr;
+    justify-content:end; 
     color: white;     
 }
 
 .contato_redes h2{
+    grid-column: 1/4;
     color: white;
 }
 
 .contato_redes p{
+    grid-column: 1/4;
     color: white;
 }
 
@@ -561,8 +577,15 @@ img {
     color: white;
 }
 
+ .icones_redes{
+    display: flex;
+    grid-column: 1/ 4;
+    justify-content: end;
+    }
+
 .contato_redes img{
     margin-top: 20px;
+    max-width: 30px;
 }
 
 @media (max-width: 787px){
@@ -596,6 +619,11 @@ img {
     
     .contato_redes img{
         max-width: 30px;  
+    }
+    
+    .icones_redes{
+        display: flex;
+        justify-content: flex-start;
     }
 }
 
