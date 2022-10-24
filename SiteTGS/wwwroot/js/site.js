@@ -66,5 +66,7 @@ $(function () {
 		event.preventDefault();
 	});
 	
-	
+	particlesJS.load('divBanner', 'assets/particles.json', function () {
+		console.log('callback - particles.js config loaded');
+	});
 });
