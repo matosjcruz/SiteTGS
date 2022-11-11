@@ -31,17 +31,20 @@ img {
     display: block;
 }
 
+.palavra {
+    color: #18b7e2;
+}
+
 /*Grid Geral*/
-.estrutura{
+.estrutura {
     display: grid;
-    background-color: HSL(200,25%, 94%); 
+    background-color: #F6FAFE;
     grid-template-columns: 1fr 1fr;
-    grid-template-areas: 
+    grid-template-areas:
         "header header header"
         "banner banner banner"
         "content content content"
-        "footer footer footer"
-        ;
+        "footer footer footer";
 }
 
 
@@ -72,9 +75,9 @@ img {
 /*Header*/
 .header {
     grid-area: header;
-    background: HSL(200, 25%, 94%); 
-    box-shadow: 0 2px 6px 0 hsla(0, 0%, 0%, 0.2);
-    padding:  0 25px 0 25px;
+    //background: F6FAFE;
+    // box-shadow: 0 2px 6px 0 hsla(0, 0%, 0%, 0.2);
+    padding: 0 25px 0 25px;
     display: grid;
     grid-template-columns: 1fr auto;
     align-items: center;
@@ -120,27 +123,27 @@ img {
     display: block;
     padding: 5px;
     margin: 10px 10px 5px 10px;
-    color: #252525;
+    color: #212F56;
     font-size: 1em;
     transition: 0.2s;
     text-transform: uppercase;
-    font-family: "Rubik";
-    font-weight: 500;    
+    font-family: Work Sans;
+    font-weight: 600;
 }
 
 .header nav a:hover{
     color: #18b7e2; 
 }
 
-.header ul li a.menu_ativo{
-    color: grey;  
+.header ul li a.menu_ativo {
+    color: #18b7e2;
 }
 
 /*Conteudo*/
-.content{
+.content {
     grid-area: content;
     max-width: 1280px;
-    background: HSL (24, 9%, 82%);
+    background: #F6FAFE;
     margin: 0 auto;
     padding: 30px;
     display: grid;
@@ -153,38 +156,42 @@ img {
     height: 650px;
 }
 
-.conteudo_banner{
+.conteudo_banner {
     text-align: center;
     grid-area: banner;
-     background: linear-gradient(270deg, #3db0d2, #182848);
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    background: #E4EDEF;
     background-size: 400% 400%;
     -webkit-animation: AnimationName 10s ease infinite;
     -moz-animation: AnimationName 10s ease infinite;
     animation: AnimationName 10s ease infinite;
 }
 
-.titulo_banner{
+.titulo_banner {
+    grid-column: 2;
+    margin-top: 80px;
     align-self: center;
-    margin: 250px 0 0 0; 
-    color: white;
-    font-size: 3rem;
+    color: #212F56;
+    font-size: 4rem;
     font-weight: 700;
     text-transform: inherit;
 }
 
-.subtitulo_banner{
-    align-self: center;
-    font-size: 1.4rem;
-    margin: 20px; 
-    color: white;
+.subtitulo_banner {
+    grid-column: 2;
+    font-weight 100;
+    font-size: 1.1rem;
+    color: #212F56;
 }
+
 
 
 .modulos{
     grid-column: 1 / 5;
-    background: #f8f8f8;
-    margin-top: -100px;
-    box-shadow: 0 2px 6px 0 hsla(0, 0%, 0%, 0.2);
+
+    margin-top: -160px;
+
     padding: 20px;
 }
 
