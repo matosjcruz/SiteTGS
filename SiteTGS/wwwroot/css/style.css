@@ -38,7 +38,7 @@ img {
 /*Grid Geral*/
 .estrutura {
     display: grid;
-    background-color: #F6FAFE;
+    background-color: #E4EDEF;
     grid-template-columns: 1fr 1fr;
     grid-template-areas:
         "header header header"
@@ -75,15 +75,15 @@ img {
 /*Header*/
 .header {
     grid-area: header;
-    //background: F6FAFE;
-    // box-shadow: 0 2px 6px 0 hsla(0, 0%, 0%, 0.2);
+    background: #E4EDEF;
+    /*box-shadow: 0 2px 6px 0 hsla(0, 0%, 0%, 0.2);*/
     padding: 0 25px 0 25px;
     display: grid;
     grid-template-columns: 1fr auto;
     align-items: center;
-    position: fixed;
+    /*    position: fixed;*/
     width: 100%;
-    z-index: 1000;
+    /*    z-index: 1000;*/
 }
 
 
@@ -127,7 +127,7 @@ img {
     font-size: 1em;
     transition: 0.2s;
     text-transform: uppercase;
-    font-family: Work Sans;
+    font-family: "Work Sans";
     font-weight: 600;
 }
 
@@ -143,7 +143,7 @@ img {
 .content {
     grid-area: content;
     max-width: 1280px;
-    background: #F6FAFE;
+    background: #E4EDEF; /*quase branco*/
     margin: 0 auto;
     padding: 30px;
     display: grid;
@@ -161,7 +161,7 @@ img {
     grid-area: banner;
     display: grid;
     grid-template-columns: 1fr 3fr 1fr;
-    background: #E4EDEF;
+    background: #E4EDEF; /*cinza azulado*/
     background-size: 400% 400%;
     -webkit-animation: AnimationName 10s ease infinite;
     -moz-animation: AnimationName 10s ease infinite;
@@ -170,7 +170,7 @@ img {
 
 .titulo_banner {
     grid-column: 2;
-    margin-top: 80px;
+   /* margin-top: 20px;*/
     align-self: center;
     color: #212F56;
     font-size: 4rem;
@@ -180,6 +180,7 @@ img {
 
 .subtitulo_banner {
     grid-column: 2;
+    margin-top: -50px;
     font-weight 100;
     font-size: 1.1rem;
     color: #212F56;
@@ -189,9 +190,7 @@ img {
 
 .modulos{
     grid-column: 1 / 5;
-
-    margin-top: -160px;
-
+    margin-top: -230px;
     padding: 20px;
 }
 
@@ -239,40 +238,17 @@ img {
     letter-spacing: 1px;
 }
 
-.caixa1 div{
-    border-top: 5px solid #18b7e2;
-}
+    .caixa1 div, .caixa2 div, .caixa3 div {
+     border-top: 5px solid #212F56;
+    }
 
-.caixa2 div{
-    border-top: 5px solid #087e9b;
-}
-.caixa3 div{
-    border-top: 5px solid #0f2748;
-}
+    .caixa1 a, .caixa2 a, .caixa3 a {
+      background: #212F56; /*AZUL ESCURO*/
+    }
 
-.caixa1 a{
-    background:#18b7e2; /*AZUL CLARO*/ 
-}
-
-.caixa2 a{
-    background:#087e9b; /*AZUL MEDIO*/
- }
-
-.caixa3 a {
-    background:#0f2748;  /*AZUL ESCURO*/
-}
-
-.caixa1 h2{
-    color: #18b7e2; /*AZUL CLARO*/ 
-}
-
-.caixa2 h2{
-    color:#087e9b; /*AZUL MEDIO*/
- }
-
-.caixa3 h2 {
-    color:#0f2748;  /*AZUL ESCURO*/
-}
+    .caixa1 h2, .caixa2 h2, .caixa3 h2 {
+        color: #212F56; /*AZUL CLARO*/
+    }
    
 .solucoes_lista h2{
     font-size: 1.3em;
@@ -309,7 +285,7 @@ img {
 }
 
 .solucoes_lista a:hover{
-    width:calc(100% - 20px);
+    width:calc(100%);
 }
 
 .btn_azul{
