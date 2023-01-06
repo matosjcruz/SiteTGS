@@ -1,4 +1,4 @@
-body, p, h1, ul, li, blockquote {
+﻿body, p, h1, ul, li, blockquote {
     padding: 0px;
     margin: 0px;
 }
@@ -32,7 +32,7 @@ img {
 }
 
 .palavra {
-    color: #18b7e2;
+    color: #18b7e2; /*azul claro*/
 }
 
 /*Grid Geral*/
@@ -122,7 +122,7 @@ img {
 .header nav a {
     display: block;
     padding: 5px;
-    margin: 10px 10px 5px 10px;
+    margin: 10px 20px 5px 10px;
     color: #212F56;
     font-size: 1em;
     transition: 0.2s;
@@ -174,24 +174,23 @@ img {
     align-self: center;
     color: #212F56;
     font-size: 4rem;
-    font-weight: 700;
+    font-weight: 800;
     text-transform: inherit;
 }
 
 .subtitulo_banner {
     grid-column: 2;
     margin-top: -50px;
-    font-weight 100;
+    font-weight: 400;
     font-size: 1.1rem;
     color: #212F56;
 }
-
-
 
 .modulos{
     grid-column: 1 / 5;
     margin-top: -230px;
     padding: 20px;
+    display: grid;
 }
 
 .subtitulo_home{
@@ -247,7 +246,7 @@ img {
     }
 
     .caixa1 h2, .caixa2 h2, .caixa3 h2 {
-        color: #212F56; /*AZUL CLARO*/
+      color: #212F56;
     }
    
 .solucoes_lista h2{
@@ -288,25 +287,72 @@ img {
     width:calc(100%);
 }
 
-.btn_azul{
-    grid-column: 1 / 5;
-    margin: 30px;
-    border-bottom: solid 1px #18b7e2;
-    color: #18b7e2;
-    text-transform: uppercase;
-    font-family: "Montserrat";
-    font-weight: 600;
-    padding: 5px;
-    letter-spacing: 1.2px;
-    font-size: 1.1em;
-    text-align: center;
-    display: grid;
-    align-items: center;
+
+.btn_azul {
+    grid-column: 1 /5;
+    position: relative;
+    display: inline-block;
+    width: auto;
+    height: auto;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    margin: 0px 25px 5px;
+    min-width: 150px;
 }
 
-.btn_azul:hover{
-    color: #0f2748;
-    border-bottom: 1px solid #0f2748;
+    .btn_azul span {
+        position: relative;
+        display: inline-block;
+        font-size: 1rem;
+        font-weight: 600;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        top: 0;
+        left: 0;
+        width: 100%;
+        padding: 10px 20px;
+        font-family: sans-serif;
+        transition: 0.3s;
+    }
+
+.btn-1::before {
+    background-color: #212F56;
+    transition: 0.3s ease-out;
+}
+
+.btn-1 span {
+    color: rgb(255,255,255);
+    border: 1px solid #212F56;
+    transition: 0.2s 0.1s;
+}
+
+    .btn-1 span:hover {
+        color: #212F56;
+        transition: 0.2s 0.1s;
+    }
+
+:active, :hover, :focus {
+    outline: 0 !important;
+    outline-offset: 0;
+}
+
+::before,
+::after {
+    position: absolute;
+    content: "";
+}
+
+.btn_azul.hover-filled-slide-left::before {
+    top: 0;
+    bottom: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.btn_azul.hover-filled-slide-left:hover::before {
+    width: 0%;
 }
 
 .solicite{
@@ -329,6 +375,7 @@ img {
     font-size: 4rem;
     line-height: 0.9em;
     font-weight: 800;
+    text-transform:capitalize;
     margin-top: 20px;
     color: #0f2748;
 }
@@ -385,12 +432,21 @@ img {
 }
 
 @media (max-width: 925px){
+    .header nav a {
+        padding: 0px;
+        margin: 10px 8px 5px 10px;
+     }
+
+    .subtitulo_banner{
+        margin-bottom: 100px;
+    }
+
     .solicite{
         display: flex;
         flex-wrap: wrap;
         flex-direction: column;
         align-items: center;
-        margin-bottom: 20px;
+        margin-bottom: 10px;
     } 
     
     .solicite img{
@@ -398,35 +454,32 @@ img {
     }
     
     .solicite h1{
-        margin: 30px 10px 30px 10px;
+        margin: 5px 10px 5px 10px;
     }
     
     .solicite p{
         text-align: center;
-        margin: 0 10px 0 10px;
+        margin: 0;
         padding: 0;
      }
     .solicite a{
         text-align: center;
-        margin: 10px 0 10px 0;
-        padding: 10px;
+        margin: 0;
+        padding: 30px;
     }
-    .solicite a:hover{
-        margin: 10px 0 10px 0;
-        padding: 10px;
+    .solicite a:hover {
+        margin: 0;
+        padding: 30px;
     }
 }
 
 @media (max-width: 385px){
-    .banner_pequeno{
-        visibility:visible;
-        display: block;
-        margin-top: 110px;
-        grid-column: 1 / 5;
+    .titulo_banner{
+        font-size: 2.4rem;
+        
     }
-    .banner{
-        visibility: hidden;
-        display: none;
+    .subtitulo_banner {
+        margin-bottom: 100px;
     }
     
     .modulos{
@@ -583,7 +636,7 @@ img {
         display: flex;
         flex-direction: column;
         text-align: left;
-        align-items: left;
+        align-itens: left;
         margin-top: 40px;
     }
     
