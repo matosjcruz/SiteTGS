@@ -59,7 +59,7 @@ namespace SiteTGS.Controllers
                 MailRequest mr = new MailRequest();
                 mr.Body = "Nome: "+request.Nome+" Telefone:"+request.Telefone+Environment.NewLine+"Email: "+request.Email+Environment.NewLine+"Mensagem: "+request.Mensagem;
                 mr.Subject = "Contato pelo site TGS Sistemas";
-                mr.ToEmail = "jessica@tgssistemas.com;contato@tgssistemas.com;robson@tgssistemas.com";
+                mr.ToEmail = "jessica@tgssistemas.com;contato@tgssistemas.com";
                 await mailService.SendEmailAsync(mr);
                 return Json("Enviado com sucesso");
             }
