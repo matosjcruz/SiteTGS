@@ -12,16 +12,17 @@
     justify-items: center;
 }
 
-.suporte_estrutura h1{
-    grid-column: 1 / 5;
-    color: #0f2748;
-    font-size: 4rem;
-    font-weight: 800;
-    text-align: center;
-    border-left: 6px solid #0f2748;
-    border-right: 6px solid #0f2748;
-    padding: 0px 30px;
-}
+    .suporte_estrutura h1 {
+        grid-column: 1 / 5;
+        color: #002387;
+        font-size: 4rem;
+        font-weight: 800;
+        text-align: center;
+        border-left: 6px solid #002387;
+        border-right: 6px solid #002387;
+        padding: 0px 30px;
+        text-transform: inherit;
+    }
 
 
 
@@ -49,6 +50,7 @@
     padding: 30px 0 0 0;
     min-width: 310px;
     box-shadow: 0 3px 6px 0 hsla(0, 0%, 0%, 0.2);
+    border-radius: 15px 0px 15px 15px;
     background-color: #f9f9f9;
     text-align: center;
     display: flex;
@@ -73,7 +75,6 @@
     font-family: "Montserrat";
     font-weight: 600;
     padding: 5px;
- 
     font-size: 1.1em;
     text-align: center;
     display: grid;
@@ -82,8 +83,8 @@
 
 
 .representantes_suporte a:hover{
-    border-bottom: solid 1px #18b7e2;
-    color: #18b7e2;
+    border-bottom: solid 1px #4E75E1;
+    color: #4E75E1;
     height:calc(100px -10px);
 }
 

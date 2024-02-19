@@ -4,7 +4,6 @@
 
 .login_estrutura {
     grid-area: content;
-    background: HSL (24, 9%, 82%);
     margin: 2% 30px 11.2% 30px;
     padding: 120px 30px 0px 30px;
     display: grid;
@@ -12,31 +11,32 @@
     justify-items: center;
 }
 
-    .login_estrutura h1 {
-        grid-column: 1 / 5;
-        color: #0f2748;
-        font-size: 4rem;
-        font-weight: 800;
-        text-align: center;
-        border-left: 6px solid #0f2748;
-        border-right: 6px solid #0f2748;
-        padding: 0px 30px;
-    }
+.login_estrutura h1 {
+    grid-column: 1 / 5;
+    color: #002387;
+    font-size: 4rem;
+    font-weight: 800;
+    text-align: center;
+    border-left: 6px solid #002387;
+    border-right: 6px solid #002387;
+    padding: 0px 30px;
+}
 
 
-    .login_estrutura form {
-        grid-column: 2;
-        margin-top: 40px;
-        display: flex;
-        flex-direction: column;
-        color: #5E5E5E;
-    }
+.login_estrutura form {
+    grid-column: 2;
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    color: #5E5E5E;
+}
 
-    .login_estrutura input {
-        height: 25px;
-        font-size: 1rem;
-        margin: 5px 0 20px 0;
-    }
+.login_estrutura input {
+    height: 30px;
+    font-size: 1rem;
+    margin: 5px 0 20px 0;
+    outline-color: #4E75E1;
+}
 
 
 .gv {
@@ -46,13 +46,13 @@
     margin-top:40px;
     border-collapse: collapse;
 }
-    .gv td{
-        padding-right:10px;
-    }
+.gv td{
+    padding-right:10px;
+}
 
-    .gv thead {
-        border-bottom: 1px solid black;
-    }
+.gv thead {
+    border-bottom: 1px solid black;
+}
 
 .dvDownloads {
     grid-column: 2;
@@ -61,6 +61,11 @@
     color: #5E5E5E;
 }
 
+/*.hidden {
+    visibility: hidden !important;
+    display: none !important;
+}*/
+
 .botao_Download {
     border-width: 0;
     height: 25px;
@@ -68,31 +73,32 @@
     margin-left: 25px;
 }
 
-    .botao_Download:hover {
-        border-bottom: 1px solid #0f2748;
-    }
+.botao_Download:hover {
+    border-bottom: 1px solid #0f2748;
+}
 
 .botao_entrar {
-    background-color: transparent;
+    background-color: #4E75E1;
+    border-radius: 10px 0 10px 10px;
+    border-color: transparent;
     margin-top: 30px;
-    border-bottom: solid 1px #18b7e2;
-    color: #18b7e2;
+    height: 40px !important;
+    color: white;
     text-transform: uppercase;
     font-family: "Montserrat";
     font-weight: 600;
     letter-spacing: 1.2px;
     font-size: 1.1em;
     text-align: center;
-    display: grid;
+   /* display: grid;
     align-items: center;
     border-top: 0 none;
     border-right: 0 none;
-    border-left: 0 none;
+    border-left: 0 none;*/
 }
 
     .botao_entrar:hover {
-        color: #0f2748;
-        border-bottom: 1px solid #0f2748;
+        background-color: #002387;
     }
 
 @media (max-width: 436px) {

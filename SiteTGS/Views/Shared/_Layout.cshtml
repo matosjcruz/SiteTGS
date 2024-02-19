@@ -7,6 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Work+Sans:wght@600&family=Rubik:ital,wght@0,300;0,400;0,500;1,400&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@600&family=Rubik:ital,wght@0,300;0,400;0,500;1,400&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
     <link rel="stylesheet" href="~/css/bootstrap.css">
@@ -18,7 +19,7 @@
         <header class="header">
             <nav class="navbar navbar-expand-sm">
                 <div class="container-fluid">
-                    <a asp-controller="Home" asp-action="Index" class="logo"><img src="~/img/logo_tgs2.svg" alt="TGS Sistemas"></a>
+                    <a asp-controller="Home" asp-action="Index" class="logo"><img src="~/img/logo_tgs_novo_branco3.svg" alt="TGS Sistemas"></a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample03" aria-controls="navbarsExample03" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
@@ -44,10 +45,10 @@
                                     <li><a class="dropdown-item" asp-controller="Home" asp-action="Solucoes" asp-route-id="12">MD-e</a></li>
                                 </ul>
                             </li>
-                            <li><a asp-controller="Home" asp-action="Representantes">Representantes</a></li>
+                            <li><a asp-controller="Home" asp-action="Representantes">Parcerias</a></li>
                             <li><a asp-controller="Home" asp-action="Suporte">Suporte</a></li>
                             <li><a asp-controller="Home" asp-action="Contato">Contato</a></li>
-                            <li><a asp-controller="Home" asp-action="Login">Login</a></li>
+                            <li><a class="botao_login" asp-controller="Home" asp-action="Login">Login</a></li>
                         </ul>
                     </div>
                 </div>
@@ -55,6 +56,7 @@
         </header>
         @RenderBody()
         <footer class="footer">
+            <div class="conteudo_footer">
             <ul class="menu_principal">
                 <li><a href="#">Sobre a TGS</a></li>
                 <li><a href="#">Orçamento</a></li>
@@ -78,11 +80,12 @@
 					<h2>Fale conosco</h2>
 					<p>Nos envie uma mensagem via <a href="https://wa.me/555190002244">Whatsapp</a> <br>(51) 9000-2244 ou <a href="contato.html">Clique aqui</a> e mande direto pelo nosso formulário!</p>
                         <div class="icones_redes">
-                            <a href="https://wa.me/555190002244" target="blank" alt="Envie um Whatsapp"><img src="img/ic_whats-85.svg"></a>
-                            <a href="https://www.facebook.com/tgssoftwares" target="blank"><img src="img/ic_face2.svg"></a>    
-                            <a href="https://www.instagram.com/tgssoftwares/" target="blank"><img src="img/ic_insta3.svg"></a> 
+                            <a href="https://wa.me/555190002244" target="blank" alt="Envie um Whatsapp"><img src="img/ic_whats_azul.svg"></a>
+                            <a href="https://www.facebook.com/tgssoftwares" target="blank"><img src="img/ic_face_azul.svg"></a>    
+                            <a href="https://www.instagram.com/tgssoftwares/" target="blank"><img src="img/ic_insta_azul.svg"></a> 
                         </div>
 					</div>
+            </div>
 				</footer>
         <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
         <script src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>

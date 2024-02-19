@@ -3,10 +3,6 @@ using MailKit.Security;
 using Microsoft.Extensions.Options;
 using MimeKit;
 using SiteTGS.Models;
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace SiteTGS.Services

@@ -6,75 +6,77 @@
 .solucoes_estrutura{
     grid-area: content;
     max-width: 1280px;
-    background: HSL (24, 9%, 82%);
-    margin: 100px auto 100px auto;
+    background: HSL (24 9% 82%);
+    margin: 50px auto 100px auto;
     padding: 0 30px 0 30px;
 }
 
 /*Menu Modulos*/
 .menu_horizontal {
-    box-shadow: 0 3px 6px 0 hsla(0, 0%, 0%, 0.2);
-    padding: 0 20px 10px;
-    background-color: #f9f9f9;
+    
+    
 }
 
-.menu_horizontal h2{
+.menu_horizontal h2 {
+    justify-self: stretch;
     text-align: center;
-    color: #0f2748;
+    font-size: 1.4rem;
+    color: #383838;
+    font-weight: 700;
+    text-transform: inherit;
     margin: 0;
-    padding: 20px;
+    padding: 20px 20px 0 20px;
+}
+hr {
+    border: 0;
+    height: 2px;
+    background-image: linear-gradient(to right, transparent, #CCC, transparent);
 }
 
 .menu_horizontal ul{
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;  
-    margin: 5px;
+    justify-content: space-between;  
     border: none;
 }
 
 .menu_horizontal ul li{
     flex: 1 0 0;
-    min-width: 80px;
-    max-width: 95px;
-    padding: 8px;
     text-align: center;
-    transition: 0.4s;  
+    padding: 5px;
+    margin: 1px;
 }
 
-.menu_horizontal ul li:last-child{
-    margin-right: 0;
+.item_modulo:hover{
+   fill: #4E75E1;
+   cursor: pointer;
+   color: #4E75E1;
+   border-radius: 15px 0px 15px 15px;
+   border: 3px solid #4E75E1;
 }
 
-.menu_horizontal img:hover{
-    border-top: solid 1px #0f2748;
-    cursor: pointer;
+li:hover p {
+    color: inherit;
 }
 
-.menu_horizontal img{
-    max-width: 60px;
-    margin: 0 auto 10px;
-    padding: 10px;
-    border-bottom: solid 1px #0f2748;
-    transition: 0.5s;
-    border-top: solid 1px transparent;
-}
 
 .menu_horizontal p{
     font-size: 1rem;
+    font-family: Raleway;
+    font-weight: 600;
     color: #0f2748;
-    transition: 0.5s;
+    transition: 0.2s;
+    line-height: 1.2rem;
+    margin-top: 5px;
 }
 
-.submenu_ativo img{
-    background-color: #18b7e2;
-    border-bottom: solid 1px #18b7e2;
-    border-top: solid 1px #18b7e2;
+.submenu_ativo {
+    fill: #4E75E1;
 }
 
-.submenu_ativo p{
-    color: #18b7e2;
-    font-weight: 500;
+.submenu_ativo p {
+    color: #4E75E1;
+    font-weight: 600;
 }
 
 
@@ -86,8 +88,8 @@
     margin: 50px 0 40px 0;
 }
 
-.titulo{
-    border-left: 6px solid #18b7e2;
+
+.titulo {
     grid-column: 1 / 4;
     grid-row: 1;
     display: flex;
@@ -100,10 +102,22 @@
     max-width: 100px;
 }
 
-.titulo h1{
-    color: #18b7e2;
+svg {
+    max-width: 55px;
+}
+
+
+svg:hover{
+    fill:#4E75E1;
+}
+
+
+.titulo h1 {
+    color: #383838;
     font-size: 4rem;
     margin-left: 20px;
+    text-transform: inherit;
+    font-weight: 700;
 }
 
 .texto_conteudo_sobre{
@@ -115,11 +129,13 @@
     text-align:justify;
 }
 
-.texto_conteudo_sobre h3{
-    color: #18b7e2;
-    margin-bottom: 0px;
-    text-indent: 20px;
-}
+    .texto_conteudo_sobre h3 {
+        color: #4E75E1;
+        margin: 40px 0px 10px 0;
+        text-indent: 20px;
+        text-transform: inherit;
+        font-weight: 700;
+    }
 
 .vantagens{
     text-indent: 0;
@@ -154,10 +170,7 @@
         margin-bottom: 0px;
     }
     .titulo {
-        border-left: 6px solid #18b7e2;
-        border-right: 6px solid #18b7e2;
-        padding: 10px;
-        margin: 0 0 20px 0;
+        align-self: center;
     }
     
     .titulo h1{

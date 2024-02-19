@@ -3,8 +3,12 @@
 }
 
 <div class="conteudo_banner">
-    <h1 class="titulo_banner">Gerencie sua empresa de forma <span class="palavra">eficiente!</span></h1>
-    <p class="subtitulo_banner">Nosso sistema <b>ERP MATOS</b> é ideal para pequenas e médias empresas que buscam por uma solução acessível e que atenda à necessidades específicas, pois é possível customizar relatórios e determinadas funcionalidades.  </p>
+    <h1 class="titulo_banner">Gerencie sua empresa de forma eficiente!</h1>
+    <p class="subtitulo_banner">O <span class="subtitulo_destaque">ERP MATOS</span> é um sistema de gestão empresarial ideal para pequenas e médias empresas que buscam por uma solução acessível e customizável que atenda às suas necessidades.</p>
+    <button asp-controller="Home" asp-action="Solucoes" asp-route-id="1" class="btn_banner">
+        <span> Conheça o nosso ERP! </span>
+    </button>
+    <img src="~/img/fotobanner.png" class="foto_banner"/>
 </div>
 <div id="divBanner">
 </div>
@@ -13,17 +17,17 @@
           <ul class="solucoes_lista">
             <li class="caixa1">
                 <div>
-                    <img src="~/img/ic_pnfe.svg" alt="NF-e Nota fiscal eletrônica">
-                    <h2>Nota fiscal eletrônica</h2>
+                    <img src="~/img/ic_pnfeblue-52.svg" alt="NF-e Nota fiscal eletrônica">
+                    <h2>Emita NF's sem complicações</h2>
                 </div>
-                <p>Emita de forma simples, operações de circulação de mercadorias. É um processo ágil e prático, pois o ERP conta com uma integração completa de clientes, produtos e pedidos.</p>
+                <p>Emita de forma simples notas fiscais. É um processo ágil e prático, pois o ERP conta com uma integração completa de clientes, produtos e pedidos.</p>
 
                 <a asp-controller="Home" asp-action="Solucoes" asp-route-id="2">Saiba mais!</a>
             </li>
             <li class="caixa2">
                 <div>
-                    <img src="~/img/ic_ppedido.svg" alt="Orçamento e Pedido">
-                    <h2>Orçamento e Pedido</h2>
+                    <img src="~/img/ic_pnfeblue-57.svg" alt="Orçamento e Pedido">
+                    <h2>Gerencie orçamentos e pedidos</h2>
                 </div>
                 <p>Controle pedidos, ordens de serviço, orçamentos e locações. Integrado com o módulo de NF-e e NFS-e, ele possibilita a geração automática dos documentos fiscais.</p>
 
@@ -31,25 +35,25 @@
             </li>
             <li class="caixa3">
                 <div>
-                    <img src="~/img/ic_pestoque.svg" alt="Estoque">
-                    <h2>Estoque</h2>
+                    <img src="~/img/ic_pnfeblue-58.svg" alt="Estoque">
+                    <h2>Controle seu estoque</h2>
                 </div>
                 <p>Gerencie produtos, vendas, compras, movimentações, inventários, possibilitando o monitoramento de materiais de maneira simples e segura. </p>
 
                 <a asp-controller="Home" asp-action="Solucoes" asp-route-id="9">SAIBA MAIS!</a>
             </li>
         </ul>
-        <button asp-controller="Home" asp-action="Solucoes" asp-route-id="1" class="btn_azul btn-1 hover-filled-slide-left">
-            <span> Conheça as nossas soluções! </span>
+        <button asp-controller="Home" asp-action="Solucoes" asp-route-id="1" class="btn_azul">
+            <span> Conheça todos os recursos do ERP Matos </span>
         </button>
     </div>
     <div class="solicite">
         <img src="~/img/imagem_adquira.png" alt="Adquira o ERP Matos">
-        <h1>Adquira já!</h1>
+        <h1>Conte com diversas vantangens!</h1>
         <p>
-            E conte com diversas vantagens, como a redução de custos, eliminação do uso de interfaces manuais, redução da carga de trabalho, pois atividades repetitivas são automatizadas e melhor controle das operações da empresa. Além disso você terá
-            um suporte completo com os nossos representantes!
+            Tenha em mãos relatórios e telas customizáveis conforme a sua necessidade, elimine o uso de interfaces manuais, reduza custos, a carga de trabalho e muito mais. Além disso você terá
+            um suporte completo com os nossos representantes.
         </p>
-        <a asp-controller="Home" asp-action="Contato" class="btn-linha">Solicite um orçamento</a>
+        <a href="https://wa.me/555190002244" target="blank" class="btn-linha">Nos chame no whatsapp!</a>
     </div>
 </main>
