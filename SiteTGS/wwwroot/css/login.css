@@ -61,10 +61,10 @@
     color: #5E5E5E;
 }
 
-/*.hidden {
+.hidden {
     visibility: hidden !important;
     display: none !important;
-}*/
+}
 
 .botao_Download {
     border-width: 0;
